@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Quiz
 {
-    public partial class UserControl1 : UserControl
+    public partial class DeserializeableUc : UserControl
     {
-        public UserControl1()
+        public DeserializeableUc()
         {
             InitializeComponent();
         }

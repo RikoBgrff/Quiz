@@ -21,8 +21,8 @@ namespace Quiz
         private void ShowPasswordImageBtn_Click(object sender, EventArgs e)
         {
             //evde internetden bax duzelt
-            PasswordTextBox.Text = PasswordTextBox.Text;
-           
+            //PasswordTextBox.Text = PasswordTextBox.Text;
+
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -40,6 +40,33 @@ namespace Quiz
             this.Dispose();
             Quiz1 form = new Quiz1();
             form.Dispose();
+        }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            string email = "";
+            string username = "";
+            ////if (UsernameTextBox.Text.Contains("@"))
+            ////{
+            ////    email = UsernameTextBox.Text;
+            ////}
+            ////else
+            ////{
+            ////    username = UsernameTextBox.Text;
+            ////}
+            ////User user = new User
+            ////{
+            ////    Username = username,
+            ////    Email = email,
+            ////    Password = PasswordTextBox.Text
+            ////};
+            //JsonHelper.JsonSerialize(user);
+            DialogResult = DialogResult.OK;
+        }
+
+        private void RegisterBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
