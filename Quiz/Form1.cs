@@ -12,22 +12,16 @@ namespace Quiz
 {
     public partial class Quiz1 : Form
     {
+        int trick = 0;
         Timer timer = new Timer();
         public Quiz1()
         {
-            LoginForm form = new LoginForm();
-            Hide();
-            form.ShowDialog();
             try
             {
-                if (DialogResult == DialogResult.OK)
-                {
-                }
                 InitializeComponent();
                 timer.Tick += Timer_Tick;
                 timer.Interval = 500;
                 timer.Start();
-
             }
             catch (Exception ex)
             {
@@ -44,7 +38,16 @@ namespace Quiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            trick = 1;
+            if (trick <= 1) {
+                LoginForm form = new LoginForm();
+                Hide();
+                form.ShowDialog();
+            }
+            if(trick > 1)
+            {
 
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -121,6 +124,14 @@ namespace Quiz
             }
 
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            CreatePanel.Visible = false;
+            EditPanel.Visible = false;
+            DateLbl.Visible = true;
+            TimeLbl.Visible = true;
         }
     }
 }

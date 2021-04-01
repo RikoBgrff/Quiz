@@ -16,57 +16,26 @@ namespace Quiz
         {
             InitializeComponent();
         }
-
-
-        private void ShowPasswordImageBtn_Click(object sender, EventArgs e)
-        {
-            //evde internetden bax duzelt
-            //PasswordTextBox.Text = PasswordTextBox.Text;
-
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ExitBtn_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             this.Dispose();
-            Quiz1 form = new Quiz1();
-            form.Dispose();
+                  
         }
-
-        private void LoginBtn_Click(object sender, EventArgs e)
-        {
-            string email = "";
-            string username = "";
-            ////if (UsernameTextBox.Text.Contains("@"))
-            ////{
-            ////    email = UsernameTextBox.Text;
-            ////}
-            ////else
-            ////{
-            ////    username = UsernameTextBox.Text;
-            ////}
-            ////User user = new User
-            ////{
-            ////    Username = username,
-            ////    Email = email,
-            ////    Password = PasswordTextBox.Text
-            ////};
-            //JsonHelper.JsonSerialize(user);
-            DialogResult = DialogResult.OK;
-        }
-
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
+            RegisterBtn.Visible = false;
+            Loginbtn.Visible = true;
+            registerUc1.Visible = true;
+            loginUc1.Visible = false;
+        }
 
+        private void Loginbtn_Click_1(object sender, EventArgs e)
+        {
+            registerUc1.Visible = false;
+            RegisterBtn.Visible = true;
+            loginUc1.Visible = true;
+            Loginbtn.Visible = false;
         }
     }
 }

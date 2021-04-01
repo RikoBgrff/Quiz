@@ -28,37 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RegisterBtn = new Guna.UI2.WinForms.Guna2Button();
             this.OR = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.LoginBtn = new Guna.UI2.WinForms.Guna2Button();
             this.PasswordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.UsernameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ShowPasswordImageBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.hidePasswordCb = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // RegisterBtn
-            // 
-            this.RegisterBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.RegisterBtn.Animated = true;
-            this.RegisterBtn.AutoRoundedCorners = true;
-            this.RegisterBtn.BackColor = System.Drawing.Color.Transparent;
-            this.RegisterBtn.BorderRadius = 13;
-            this.RegisterBtn.CheckedState.Parent = this.RegisterBtn;
-            this.RegisterBtn.CustomImages.Parent = this.RegisterBtn;
-            this.RegisterBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(100)))), ((int)(((byte)(97)))));
-            this.RegisterBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RegisterBtn.ForeColor = System.Drawing.Color.White;
-            this.RegisterBtn.HoverState.Parent = this.RegisterBtn;
-            this.RegisterBtn.Location = new System.Drawing.Point(49, 410);
-            this.RegisterBtn.Name = "RegisterBtn";
-            this.RegisterBtn.ShadowDecoration.Parent = this.RegisterBtn;
-            this.RegisterBtn.Size = new System.Drawing.Size(168, 28);
-            this.RegisterBtn.TabIndex = 22;
-            this.RegisterBtn.Text = "Register";
             // 
             // OR
             // 
@@ -110,6 +89,7 @@
             this.LoginBtn.Size = new System.Drawing.Size(168, 28);
             this.LoginBtn.TabIndex = 18;
             this.LoginBtn.Text = "Login";
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // PasswordTextBox
             // 
@@ -135,7 +115,7 @@
             this.PasswordTextBox.HoverState.Parent = this.PasswordTextBox;
             this.PasswordTextBox.Location = new System.Drawing.Point(12, 179);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.PasswordChar = '*';
+            this.PasswordTextBox.PasswordChar = '\0';
             this.PasswordTextBox.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
             this.PasswordTextBox.PlaceholderText = "Password";
             this.PasswordTextBox.SelectedText = "";
@@ -177,27 +157,6 @@
             this.UsernameTextBox.Size = new System.Drawing.Size(246, 36);
             this.UsernameTextBox.TabIndex = 16;
             // 
-            // ShowPasswordImageBtn
-            // 
-            this.ShowPasswordImageBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ShowPasswordImageBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ShowPasswordImageBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.ShowPasswordImageBtn.CheckedState.Parent = this.ShowPasswordImageBtn;
-            this.ShowPasswordImageBtn.HoverState.Image = global::Quiz.Properties.Resources.whiteTransparentDiamond;
-            this.ShowPasswordImageBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.ShowPasswordImageBtn.HoverState.Parent = this.ShowPasswordImageBtn;
-            this.ShowPasswordImageBtn.Image = global::Quiz.Properties.Resources.hideIco;
-            this.ShowPasswordImageBtn.ImageRotate = 0F;
-            this.ShowPasswordImageBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.ShowPasswordImageBtn.Location = new System.Drawing.Point(200, 169);
-            this.ShowPasswordImageBtn.Name = "ShowPasswordImageBtn";
-            this.ShowPasswordImageBtn.PressedState.Image = global::Quiz.Properties.Resources.whiteTransparentDiamond;
-            this.ShowPasswordImageBtn.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.ShowPasswordImageBtn.PressedState.Parent = this.ShowPasswordImageBtn;
-            this.ShowPasswordImageBtn.Size = new System.Drawing.Size(64, 54);
-            this.ShowPasswordImageBtn.TabIndex = 23;
-            this.ShowPasswordImageBtn.UseTransparentBackground = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -209,13 +168,28 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // hidePasswordCb
+            // 
+            this.hidePasswordCb.BackColor = System.Drawing.Color.Transparent;
+            this.hidePasswordCb.CheckedState.Image = global::Quiz.Properties.Resources.hideIco;
+            this.hidePasswordCb.CheckedState.Parent = this.hidePasswordCb;
+            this.hidePasswordCb.HoverState.Parent = this.hidePasswordCb;
+            this.hidePasswordCb.Image = global::Quiz.Properties.Resources.hideIco;
+            this.hidePasswordCb.IndicateFocus = true;
+            this.hidePasswordCb.Location = new System.Drawing.Point(245, 188);
+            this.hidePasswordCb.Name = "hidePasswordCb";
+            this.hidePasswordCb.PressedState.Parent = this.hidePasswordCb;
+            this.hidePasswordCb.Size = new System.Drawing.Size(21, 23);
+            this.hidePasswordCb.TabIndex = 25;
+            this.hidePasswordCb.UseTransparentBackground = true;
+            this.hidePasswordCb.CheckedChanged += new System.EventHandler(this.hidePasswordCb_CheckedChanged);
+            // 
             // LoginUc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(63)))), ((int)(((byte)(120)))));
-            this.Controls.Add(this.ShowPasswordImageBtn);
-            this.Controls.Add(this.RegisterBtn);
+            this.Controls.Add(this.hidePasswordCb);
             this.Controls.Add(this.OR);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
@@ -232,9 +206,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2ImageButton ShowPasswordImageBtn;
-        private Guna.UI2.WinForms.Guna2Button RegisterBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel OR;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -242,5 +213,6 @@
         private Guna.UI2.WinForms.Guna2TextBox PasswordTextBox;
         private Guna.UI2.WinForms.Guna2TextBox UsernameTextBox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2ImageCheckBox hidePasswordCb;
     }
 }

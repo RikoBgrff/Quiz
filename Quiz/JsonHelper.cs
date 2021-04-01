@@ -11,37 +11,34 @@ namespace Quiz
     public class JsonHelper
     {
 
-        public static void JsonSerialize(User user)
+        public static void JsonSerialize(List<User> users)
         {
             var serializer = new JsonSerializer();
-           
-                using (var sw = new StreamWriter("users.json"))
+
+            using (var sw = new StreamWriter("users.json",true))
+            {
+                using (var jw = new JsonTextWriter(sw))
                 {
-                    using (var jw = new JsonTextWriter(sw))
-                    {
-                        jw.Formatting = Newtonsoft.Json.Formatting.Indented;
-                        serializer.Serialize(jw, user);
-                    }
+                    jw.Formatting = Newtonsoft.Json.Formatting.Indented;
+                    serializer.Serialize(jw, users);
                 }
+            }
         }
 
-        //static void JsonDeserialize()
-        //{
-        //    Car[] cars = null;
-        //    var serializer = new JsonSerializer();
+        public static void JsonDeserialize()
+        {
+            User[] users = null;
+            var serializer = new JsonSerializer();
 
-        //    using (var sr = new StreamReader("json.json"))
-        //    {
-        //        using (var jr = new JsonTextReader(sr))
-        //        {
-        //            cars = serializer.Deserialize<Car[]>(jr);
-        //        }
-        //        foreach (var item in cars)
-        //        {
-        //            Console.WriteLine(item);
-        //        }
-        //    }
-
-        //}
+            using (var sr = new StreamReader("users.json"))
+            {
+                using (var jr = new JsonTextReader(sr))
+                {
+                    users = serializer.Deserialize<User[]>(jr);
+                   
+                }
+            }
+        }
     }
 }
+

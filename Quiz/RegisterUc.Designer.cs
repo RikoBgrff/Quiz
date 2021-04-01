@@ -35,13 +35,12 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.PasswordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.UsernameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.ShowPasswordImageBtn = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.EmailTxtBx = new Guna.UI2.WinForms.Guna2TextBox();
+            this.UsernameTxtBx = new Guna.UI2.WinForms.Guna2TextBox();
+            this.VerifyPasswordTxtBx = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.hidePasswordCb = new Guna.UI2.WinForms.Guna2ImageCheckBox();
+            this.guna2ImageCheckBox1 = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +67,7 @@
             this.RegisterBtn.Size = new System.Drawing.Size(168, 28);
             this.RegisterBtn.TabIndex = 18;
             this.RegisterBtn.Text = "Register";
+            this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
             // 
             // OR
             // 
@@ -133,166 +133,104 @@
             this.PasswordTextBox.Size = new System.Drawing.Size(246, 36);
             this.PasswordTextBox.TabIndex = 12;
             // 
-            // UsernameTextBox
+            // EmailTxtBx
             // 
-            this.UsernameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.UsernameTextBox.Animated = true;
-            this.UsernameTextBox.AutoRoundedCorners = true;
-            this.UsernameTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.UsernameTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(100)))), ((int)(((byte)(97)))));
-            this.UsernameTextBox.BorderRadius = 17;
-            this.UsernameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.UsernameTextBox.DefaultText = "";
-            this.UsernameTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UsernameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.UsernameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UsernameTextBox.DisabledState.Parent = this.UsernameTextBox;
-            this.UsernameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UsernameTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(63)))), ((int)(((byte)(120)))));
-            this.UsernameTextBox.FocusedState.BorderColor = System.Drawing.Color.DarkCyan;
-            this.UsernameTextBox.FocusedState.Parent = this.UsernameTextBox;
-            this.UsernameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.UsernameTextBox.ForeColor = System.Drawing.Color.White;
-            this.UsernameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.UsernameTextBox.HoverState.Parent = this.UsernameTextBox;
-            this.UsernameTextBox.Location = new System.Drawing.Point(9, 160);
-            this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.PasswordChar = '\0';
-            this.UsernameTextBox.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
-            this.UsernameTextBox.PlaceholderText = "Email";
-            this.UsernameTextBox.SelectedText = "";
-            this.UsernameTextBox.ShadowDecoration.Color = System.Drawing.Color.Maroon;
-            this.UsernameTextBox.ShadowDecoration.Parent = this.UsernameTextBox;
-            this.UsernameTextBox.Size = new System.Drawing.Size(246, 36);
-            this.UsernameTextBox.TabIndex = 11;
+            this.EmailTxtBx.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.EmailTxtBx.Animated = true;
+            this.EmailTxtBx.AutoRoundedCorners = true;
+            this.EmailTxtBx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.EmailTxtBx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(100)))), ((int)(((byte)(97)))));
+            this.EmailTxtBx.BorderRadius = 17;
+            this.EmailTxtBx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EmailTxtBx.DefaultText = "";
+            this.EmailTxtBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EmailTxtBx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EmailTxtBx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EmailTxtBx.DisabledState.Parent = this.EmailTxtBx;
+            this.EmailTxtBx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EmailTxtBx.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(63)))), ((int)(((byte)(120)))));
+            this.EmailTxtBx.FocusedState.BorderColor = System.Drawing.Color.DarkCyan;
+            this.EmailTxtBx.FocusedState.Parent = this.EmailTxtBx;
+            this.EmailTxtBx.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.EmailTxtBx.ForeColor = System.Drawing.Color.White;
+            this.EmailTxtBx.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EmailTxtBx.HoverState.Parent = this.EmailTxtBx;
+            this.EmailTxtBx.Location = new System.Drawing.Point(9, 160);
+            this.EmailTxtBx.Name = "EmailTxtBx";
+            this.EmailTxtBx.PasswordChar = '\0';
+            this.EmailTxtBx.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
+            this.EmailTxtBx.PlaceholderText = "Email";
+            this.EmailTxtBx.SelectedText = "";
+            this.EmailTxtBx.ShadowDecoration.Color = System.Drawing.Color.Maroon;
+            this.EmailTxtBx.ShadowDecoration.Parent = this.EmailTxtBx;
+            this.EmailTxtBx.Size = new System.Drawing.Size(246, 36);
+            this.EmailTxtBx.TabIndex = 11;
             // 
-            // guna2TextBox1
+            // UsernameTxtBx
             // 
-            this.guna2TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2TextBox1.Animated = true;
-            this.guna2TextBox1.AutoRoundedCorners = true;
-            this.guna2TextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(100)))), ((int)(((byte)(97)))));
-            this.guna2TextBox1.BorderRadius = 17;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(63)))), ((int)(((byte)(120)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.DarkCyan;
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(9, 110);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2TextBox1.PlaceholderText = "Username";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Color = System.Drawing.Color.Maroon;
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(246, 36);
-            this.guna2TextBox1.TabIndex = 19;
+            this.UsernameTxtBx.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UsernameTxtBx.Animated = true;
+            this.UsernameTxtBx.AutoRoundedCorners = true;
+            this.UsernameTxtBx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.UsernameTxtBx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(100)))), ((int)(((byte)(97)))));
+            this.UsernameTxtBx.BorderRadius = 17;
+            this.UsernameTxtBx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.UsernameTxtBx.DefaultText = "";
+            this.UsernameTxtBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UsernameTxtBx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.UsernameTxtBx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UsernameTxtBx.DisabledState.Parent = this.UsernameTxtBx;
+            this.UsernameTxtBx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UsernameTxtBx.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(63)))), ((int)(((byte)(120)))));
+            this.UsernameTxtBx.FocusedState.BorderColor = System.Drawing.Color.DarkCyan;
+            this.UsernameTxtBx.FocusedState.Parent = this.UsernameTxtBx;
+            this.UsernameTxtBx.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UsernameTxtBx.ForeColor = System.Drawing.Color.White;
+            this.UsernameTxtBx.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.UsernameTxtBx.HoverState.Parent = this.UsernameTxtBx;
+            this.UsernameTxtBx.Location = new System.Drawing.Point(9, 110);
+            this.UsernameTxtBx.Name = "UsernameTxtBx";
+            this.UsernameTxtBx.PasswordChar = '\0';
+            this.UsernameTxtBx.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
+            this.UsernameTxtBx.PlaceholderText = "Username";
+            this.UsernameTxtBx.SelectedText = "";
+            this.UsernameTxtBx.ShadowDecoration.Color = System.Drawing.Color.Maroon;
+            this.UsernameTxtBx.ShadowDecoration.Parent = this.UsernameTxtBx;
+            this.UsernameTxtBx.Size = new System.Drawing.Size(246, 36);
+            this.UsernameTxtBx.TabIndex = 19;
             // 
-            // guna2TextBox2
+            // VerifyPasswordTxtBx
             // 
-            this.guna2TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2TextBox2.Animated = true;
-            this.guna2TextBox2.AutoRoundedCorners = true;
-            this.guna2TextBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(100)))), ((int)(((byte)(97)))));
-            this.guna2TextBox2.BorderRadius = 17;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(63)))), ((int)(((byte)(120)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.DarkCyan;
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(9, 255);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '*';
-            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
-            this.guna2TextBox2.PlaceholderText = "Verify password";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Color = System.Drawing.Color.Maroon;
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(246, 36);
-            this.guna2TextBox2.TabIndex = 20;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 13;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(100)))), ((int)(((byte)(97)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(49, 371);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(168, 28);
-            this.guna2Button1.TabIndex = 22;
-            this.guna2Button1.Text = "Login";
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2ImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.HoverState.Image = global::Quiz.Properties.Resources.whiteTransparentDiamond;
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Image = global::Quiz.Properties.Resources.hideIco;
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(199, 246);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.Image = global::Quiz.Properties.Resources.whiteTransparentDiamond;
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton1.TabIndex = 21;
-            this.guna2ImageButton1.UseTransparentBackground = true;
-            // 
-            // ShowPasswordImageBtn
-            // 
-            this.ShowPasswordImageBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ShowPasswordImageBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ShowPasswordImageBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.ShowPasswordImageBtn.CheckedState.Parent = this.ShowPasswordImageBtn;
-            this.ShowPasswordImageBtn.HoverState.Image = global::Quiz.Properties.Resources.whiteTransparentDiamond;
-            this.ShowPasswordImageBtn.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.ShowPasswordImageBtn.HoverState.Parent = this.ShowPasswordImageBtn;
-            this.ShowPasswordImageBtn.Image = global::Quiz.Properties.Resources.hideIco;
-            this.ShowPasswordImageBtn.ImageRotate = 0F;
-            this.ShowPasswordImageBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.ShowPasswordImageBtn.Location = new System.Drawing.Point(200, 200);
-            this.ShowPasswordImageBtn.Name = "ShowPasswordImageBtn";
-            this.ShowPasswordImageBtn.PressedState.Image = global::Quiz.Properties.Resources.whiteTransparentDiamond;
-            this.ShowPasswordImageBtn.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.ShowPasswordImageBtn.PressedState.Parent = this.ShowPasswordImageBtn;
-            this.ShowPasswordImageBtn.Size = new System.Drawing.Size(64, 54);
-            this.ShowPasswordImageBtn.TabIndex = 13;
-            this.ShowPasswordImageBtn.UseTransparentBackground = true;
+            this.VerifyPasswordTxtBx.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.VerifyPasswordTxtBx.Animated = true;
+            this.VerifyPasswordTxtBx.AutoRoundedCorners = true;
+            this.VerifyPasswordTxtBx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.VerifyPasswordTxtBx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(100)))), ((int)(((byte)(97)))));
+            this.VerifyPasswordTxtBx.BorderRadius = 17;
+            this.VerifyPasswordTxtBx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.VerifyPasswordTxtBx.DefaultText = "";
+            this.VerifyPasswordTxtBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.VerifyPasswordTxtBx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.VerifyPasswordTxtBx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.VerifyPasswordTxtBx.DisabledState.Parent = this.VerifyPasswordTxtBx;
+            this.VerifyPasswordTxtBx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.VerifyPasswordTxtBx.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(63)))), ((int)(((byte)(120)))));
+            this.VerifyPasswordTxtBx.FocusedState.BorderColor = System.Drawing.Color.DarkCyan;
+            this.VerifyPasswordTxtBx.FocusedState.Parent = this.VerifyPasswordTxtBx;
+            this.VerifyPasswordTxtBx.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.VerifyPasswordTxtBx.ForeColor = System.Drawing.Color.White;
+            this.VerifyPasswordTxtBx.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.VerifyPasswordTxtBx.HoverState.Parent = this.VerifyPasswordTxtBx;
+            this.VerifyPasswordTxtBx.Location = new System.Drawing.Point(9, 255);
+            this.VerifyPasswordTxtBx.Name = "VerifyPasswordTxtBx";
+            this.VerifyPasswordTxtBx.PasswordChar = '*';
+            this.VerifyPasswordTxtBx.PlaceholderForeColor = System.Drawing.Color.Gainsboro;
+            this.VerifyPasswordTxtBx.PlaceholderText = "Verify password";
+            this.VerifyPasswordTxtBx.SelectedText = "";
+            this.VerifyPasswordTxtBx.ShadowDecoration.Color = System.Drawing.Color.Maroon;
+            this.VerifyPasswordTxtBx.ShadowDecoration.Parent = this.VerifyPasswordTxtBx;
+            this.VerifyPasswordTxtBx.Size = new System.Drawing.Size(246, 36);
+            this.VerifyPasswordTxtBx.TabIndex = 20;
             // 
             // pictureBox1
             // 
@@ -305,22 +243,53 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // hidePasswordCb
+            // 
+            this.hidePasswordCb.BackColor = System.Drawing.Color.Transparent;
+            this.hidePasswordCb.CheckedState.Image = global::Quiz.Properties.Resources.hideIco;
+            this.hidePasswordCb.CheckedState.Parent = this.hidePasswordCb;
+            this.hidePasswordCb.HoverState.Parent = this.hidePasswordCb;
+            this.hidePasswordCb.Image = global::Quiz.Properties.Resources.hideIco;
+            this.hidePasswordCb.IndicateFocus = true;
+            this.hidePasswordCb.Location = new System.Drawing.Point(242, 222);
+            this.hidePasswordCb.Name = "hidePasswordCb";
+            this.hidePasswordCb.PressedState.Parent = this.hidePasswordCb;
+            this.hidePasswordCb.Size = new System.Drawing.Size(21, 23);
+            this.hidePasswordCb.TabIndex = 26;
+            this.hidePasswordCb.UseTransparentBackground = true;
+            this.hidePasswordCb.CheckedChanged += new System.EventHandler(this.hidePasswordCb_CheckedChanged);
+            // 
+            // guna2ImageCheckBox1
+            // 
+            this.guna2ImageCheckBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ImageCheckBox1.CheckedState.Image = global::Quiz.Properties.Resources.hideIco;
+            this.guna2ImageCheckBox1.CheckedState.Parent = this.guna2ImageCheckBox1;
+            this.guna2ImageCheckBox1.HoverState.Parent = this.guna2ImageCheckBox1;
+            this.guna2ImageCheckBox1.Image = global::Quiz.Properties.Resources.hideIco;
+            this.guna2ImageCheckBox1.IndicateFocus = true;
+            this.guna2ImageCheckBox1.Location = new System.Drawing.Point(242, 269);
+            this.guna2ImageCheckBox1.Name = "guna2ImageCheckBox1";
+            this.guna2ImageCheckBox1.PressedState.Parent = this.guna2ImageCheckBox1;
+            this.guna2ImageCheckBox1.Size = new System.Drawing.Size(21, 23);
+            this.guna2ImageCheckBox1.TabIndex = 27;
+            this.guna2ImageCheckBox1.UseTransparentBackground = true;
+            this.guna2ImageCheckBox1.CheckedChanged += new System.EventHandler(this.guna2ImageCheckBox1_CheckedChanged);
+            // 
             // RegisterUc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(63)))), ((int)(((byte)(120)))));
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.guna2ImageButton1);
-            this.Controls.Add(this.guna2TextBox2);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.guna2ImageCheckBox1);
+            this.Controls.Add(this.hidePasswordCb);
+            this.Controls.Add(this.VerifyPasswordTxtBx);
+            this.Controls.Add(this.UsernameTxtBx);
             this.Controls.Add(this.RegisterBtn);
             this.Controls.Add(this.OR);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.ShowPasswordImageBtn);
             this.Controls.Add(this.PasswordTextBox);
-            this.Controls.Add(this.UsernameTextBox);
+            this.Controls.Add(this.EmailTxtBx);
             this.Controls.Add(this.pictureBox1);
             this.Name = "RegisterUc";
             this.Size = new System.Drawing.Size(274, 482);
@@ -337,13 +306,12 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel OR;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2ImageButton ShowPasswordImageBtn;
         private Guna.UI2.WinForms.Guna2TextBox PasswordTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox UsernameTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox EmailTxtBx;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2TextBox VerifyPasswordTxtBx;
+        private Guna.UI2.WinForms.Guna2TextBox UsernameTxtBx;
+        private Guna.UI2.WinForms.Guna2ImageCheckBox guna2ImageCheckBox1;
+        private Guna.UI2.WinForms.Guna2ImageCheckBox hidePasswordCb;
     }
 }
