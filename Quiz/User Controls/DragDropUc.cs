@@ -20,8 +20,8 @@ namespace Quiz
             InitializeComponent();
         }
 
-        List<QuestionBlock> questions = new List<QuestionBlock>();
-        private void DragDropUc_DragDrop(object sender, DragEventArgs e)
+    List<QuestionBlock> questions = new List<QuestionBlock>();
+    private void DragDropUc_DragDrop(object sender, DragEventArgs e)
         {
 
             string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -78,23 +78,18 @@ namespace Quiz
                             deserializeableUc1.vDRbtn.Checked = true;
                         }
                     }
-                    break;
                 }
             }
         }
-   
-
     private void DragDropUc_Load(object sender, EventArgs e)
     {
         this.AllowDrop = true;
     }
-
     private void DragDropUc_DragEnter(object sender, DragEventArgs e)
     {
         e.Effect = DragDropEffects.All;
 
     }
-
     private void NextBtn_Click(object sender, EventArgs e)
     {
         id++;
